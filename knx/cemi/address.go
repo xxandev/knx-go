@@ -85,6 +85,16 @@ func (addr IndividualAddr) String() string {
 	return fmt.Sprintf("%d.%d.%d", uint8(addr>>12)&0xF, uint8(addr>>8)&0xF, uint8(addr))
 }
 
+// Formatting generates a string format "%d.%d.%d" > "a.b.c" where
+// a = Area Address = 4 bits, b = Line Address = 4 bits,
+// c = Device Address = 1 byte.
+func (addr IndividualAddr) Formatting(format string) string {
+	if format == "" {
+		return addr.String()
+	}
+	return fmt.Sprintf(format, uint8(addr>>12)&0xF, uint8(addr>>8)&0xF, uint8(addr))
+}
+
 // GroupAddr is an address for a KNX group object. Group address
 // zero (0/0/0) is not allowed.
 type GroupAddr uint16
@@ -155,4 +165,13 @@ func NewGroupAddrString(addr string) (GroupAddr, error) {
 // a = Main Group = 5 bits, b = Middle Group = 3 bits, c = Sub Group = 1 byte.
 func (addr GroupAddr) String() string {
 	return fmt.Sprintf("%d/%d/%d", uint8(addr>>11)&0x1F, uint8(addr>>8)&0x7, uint8(addr))
+}
+
+// String generates a string representation with groups "a/b/c" where
+// a = Main Group = 5 bits, b = Middle Group = 3 bits, c = Sub Group = 1 byte.
+func (addr GroupAddr) Formatting(format string) string {
+	if format == "" {
+		return addr.String()
+	}
+	return fmt.Sprintf(format, uint8(addr>>12)&0xF, uint8(addr>>8)&0xF, uint8(addr))
 }
