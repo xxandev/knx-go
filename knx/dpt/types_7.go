@@ -26,6 +26,29 @@ func (d DPT_7001) String() string {
 	return fmt.Sprintf("%d pulses", uint16(d))
 }
 
+func (d *DPT_7001) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7001(data)
+		return nil
+	case int:
+		*d = DPT_7001(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7001) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
+}
+
 // DPT_7002 represents DPT 7.002 / Time Period MSec.
 type DPT_7002 uint16
 
@@ -43,6 +66,29 @@ func (d DPT_7002) Unit() string {
 
 func (d DPT_7002) String() string {
 	return fmt.Sprintf("%d ms", uint16(d))
+}
+
+func (d *DPT_7002) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7002(data)
+		return nil
+	case int:
+		*d = DPT_7002(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7002) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7002) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
 }
 
 // DPT_7003 represents DPT 7.003 / Time Period 10 MSec.
@@ -64,6 +110,29 @@ func (d DPT_7003) String() string {
 	return fmt.Sprintf("%d s", uint16(d))
 }
 
+func (d *DPT_7003) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7003(data)
+		return nil
+	case int:
+		*d = DPT_7003(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7003) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7003) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
+}
+
 // DPT_7004 represents DPT 7.004 / Time Period 100 MSec.
 type DPT_7004 uint16
 
@@ -81,6 +150,29 @@ func (d DPT_7004) Unit() string {
 
 func (d DPT_7004) String() string {
 	return fmt.Sprintf("%d s", uint16(d))
+}
+
+func (d *DPT_7004) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7004(data)
+		return nil
+	case int:
+		*d = DPT_7004(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7004) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7004) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
 }
 
 // DPT_7005 represents DPT 7.005 / Time Period Sec.
@@ -102,6 +194,29 @@ func (d DPT_7005) String() string {
 	return fmt.Sprintf("%d s", uint16(d))
 }
 
+func (d *DPT_7005) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7005(data)
+		return nil
+	case int:
+		*d = DPT_7005(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7005) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7005) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
+}
+
 // DPT_7006 represents DPT 7.006 / Time Period Min.
 type DPT_7006 uint16
 
@@ -119,6 +234,29 @@ func (d DPT_7006) Unit() string {
 
 func (d DPT_7006) String() string {
 	return fmt.Sprintf("%d m", uint16(d))
+}
+
+func (d *DPT_7006) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7006(data)
+		return nil
+	case int:
+		*d = DPT_7006(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7006) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7006) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
 }
 
 // DPT_7007 represents DPT 7.007 / Time Period Hrs.
@@ -140,6 +278,29 @@ func (d DPT_7007) String() string {
 	return fmt.Sprintf("%d h", uint16(d))
 }
 
+func (d *DPT_7007) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7007(data)
+		return nil
+	case int:
+		*d = DPT_7007(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7007) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7007) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
+}
+
 // DPT_7010 represents DPT 7.010 / Property DataType.
 type DPT_7010 uint16
 
@@ -157,6 +318,29 @@ func (d DPT_7010) Unit() string {
 
 func (d DPT_7010) String() string {
 	return fmt.Sprintf("%d", uint16(d))
+}
+
+func (d *DPT_7010) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7010(data)
+		return nil
+	case int:
+		*d = DPT_7010(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7010) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7010) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
 }
 
 // DPT_7011 represents DPT 7.011 / Length mm.
@@ -178,6 +362,29 @@ func (d DPT_7011) String() string {
 	return fmt.Sprintf("%d mm", uint16(d))
 }
 
+func (d *DPT_7011) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7011(data)
+		return nil
+	case int:
+		*d = DPT_7011(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7011) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7011) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
+}
+
 // DPT_7012 represents DPT 7.012 / Current mA.
 type DPT_7012 uint16
 
@@ -197,6 +404,29 @@ func (d DPT_7012) String() string {
 	return fmt.Sprintf("%d mA", uint16(d))
 }
 
+func (d *DPT_7012) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7012(data)
+		return nil
+	case int:
+		*d = DPT_7012(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7012) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7012) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
+}
+
 // DPT_7013 represents DPT 7.013 / Brightness lux.
 type DPT_7013 uint16
 
@@ -214,4 +444,27 @@ func (d DPT_7013) Unit() string {
 
 func (d DPT_7013) String() string {
 	return fmt.Sprintf("%d lux", uint16(d))
+}
+
+func (d *DPT_7013) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint16:
+		*d = DPT_7013(data)
+		return nil
+	case int:
+		*d = DPT_7013(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_7013) Get() interface{} {
+	return uint16(d)
+}
+
+func (d DPT_7013) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint16(d))
+	}
+	return fmt.Sprint(uint16(d))
 }

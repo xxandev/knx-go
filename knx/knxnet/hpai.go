@@ -9,7 +9,7 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/vapourismo/knx-go/knx/util"
+	"github.com/xxandev/knx-go/knx/util"
 )
 
 // Protocol specifies a host protocol to use.

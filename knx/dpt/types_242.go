@@ -77,3 +77,22 @@ func (d DPT_242600) Unit() string {
 func (d DPT_242600) String() string {
 	return fmt.Sprintf("x: %d y: %d Y: %d ColorValid: %t, BrightnessValid: %t", d.X, d.Y, d.YBrightness, d.ColorValid, d.BrightnessValid)
 }
+
+func (d *DPT_242600) Set(v interface{}) error {
+	if data, ok := v.(DPT_242600); ok {
+		*d = data
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_242600) Get() interface{} {
+	return d
+}
+
+func (d DPT_242600) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, d.X, d.Y, d.YBrightness, d.ColorValid, d.BrightnessValid)
+	}
+	return fmt.Sprintf("x: %d y: %d Y: %d ColorValid: %t, BrightnessValid: %t", d.X, d.Y, d.YBrightness, d.ColorValid, d.BrightnessValid)
+}

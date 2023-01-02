@@ -38,3 +38,26 @@ func (d DPT_18001) Unit() string {
 func (d DPT_18001) String() string {
 	return fmt.Sprintf("%d", uint8(d))
 }
+
+func (d *DPT_18001) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint8:
+		*d = DPT_18001(data)
+		return nil
+	case int:
+		*d = DPT_18001(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_18001) Get() interface{} {
+	return uint8(d)
+}
+
+func (d DPT_18001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint8(d))
+	}
+	return fmt.Sprint(uint8(d))
+}

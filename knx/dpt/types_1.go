@@ -3,6 +3,10 @@
 
 package dpt
 
+import (
+	"fmt"
+)
+
 // DPT_1001 represents DPT 1.001 (G) / DPT_Switch.
 type DPT_1001 bool
 
@@ -24,6 +28,28 @@ func (d DPT_1001) String() string {
 	} else {
 		return "Off"
 	}
+}
+
+func (d *DPT_1001) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1001(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1001) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1002 represents DPT 1.002 (G) / DPT_Bool.
@@ -49,6 +75,28 @@ func (d DPT_1002) String() string {
 	}
 }
 
+func (d *DPT_1002) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1002(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1002) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1002) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1003 represents DPT 1.003 (G) / DPT_Enable.
 type DPT_1003 bool
 
@@ -70,6 +118,28 @@ func (d DPT_1003) String() string {
 	} else {
 		return "Disable"
 	}
+}
+
+func (d *DPT_1003) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1003(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1003) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1003) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1004 represents DPT 1.004 (FB) / DPT_Ramp.
@@ -95,6 +165,28 @@ func (d DPT_1004) String() string {
 	}
 }
 
+func (d *DPT_1004) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1004(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1004) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1004) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1005 represents DPT 1.005 (FB) / DPT_Alarm.
 type DPT_1005 bool
 
@@ -116,6 +208,28 @@ func (d DPT_1005) String() string {
 	} else {
 		return "No alarm"
 	}
+}
+
+func (d *DPT_1005) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1005(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1005) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1005) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1006 represents DPT 1.006 (FB) / DPT_BinaryValue.
@@ -141,6 +255,28 @@ func (d DPT_1006) String() string {
 	}
 }
 
+func (d *DPT_1006) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1006(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1006) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1006) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1007 represents DPT 1.007 (FB) / DPT_Step.
 type DPT_1007 bool
 
@@ -162,6 +298,28 @@ func (d DPT_1007) String() string {
 	} else {
 		return "Decrease"
 	}
+}
+
+func (d *DPT_1007) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1007(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1007) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1007) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1008 represents DPT 1.008 (G) / DPT_UpDown.
@@ -187,6 +345,28 @@ func (d DPT_1008) String() string {
 	}
 }
 
+func (d *DPT_1008) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1008(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1008) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1008) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1009 represents DPT 1.009 (G) / DPT_OpenClose.
 type DPT_1009 bool
 
@@ -208,6 +388,28 @@ func (d DPT_1009) String() string {
 	} else {
 		return "Open"
 	}
+}
+
+func (d *DPT_1009) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1009(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1009) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1009) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1010 represents DPT 1.010 (G) / DPT_Start.
@@ -233,6 +435,28 @@ func (d DPT_1010) String() string {
 	}
 }
 
+func (d *DPT_1010) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1010(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1010) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1010) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1011 represents DPT 1.011 (FB) / DPT_State.
 type DPT_1011 bool
 
@@ -254,6 +478,28 @@ func (d DPT_1011) String() string {
 	} else {
 		return "Inactive"
 	}
+}
+
+func (d *DPT_1011) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1011(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1011) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1011) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1012 represents DPT 1.012 (FB) / DPT_Invert.
@@ -279,6 +525,28 @@ func (d DPT_1012) String() string {
 	}
 }
 
+func (d *DPT_1012) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1012(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1012) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1012) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1013 represents DPT 1.013 (FB) / DPT_DimSendStyle.
 type DPT_1013 bool
 
@@ -300,6 +568,28 @@ func (d DPT_1013) String() string {
 	} else {
 		return "Start/stop"
 	}
+}
+
+func (d *DPT_1013) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1013(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1013) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1013) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1014 represents DPT 1.014 (FB) / DPT_InputSource.
@@ -325,6 +615,28 @@ func (d DPT_1014) String() string {
 	}
 }
 
+func (d *DPT_1014) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1014(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1014) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1014) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1015 represents DPT 1.015 (G) / DPT_Reset.
 type DPT_1015 bool
 
@@ -346,6 +658,28 @@ func (d DPT_1015) String() string {
 	} else {
 		return "no action"
 	}
+}
+
+func (d *DPT_1015) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1015(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1015) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1015) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1016 represents DPT 1.016 (G) / DPT_Ack.
@@ -371,6 +705,28 @@ func (d DPT_1016) String() string {
 	}
 }
 
+func (d *DPT_1016) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1016(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1016) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1016) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1017 represents DPT 1.017 (G) / DPT_Trigger.
 type DPT_1017 bool
 
@@ -392,6 +748,28 @@ func (d DPT_1017) String() string {
 	} else {
 		return "trigger"
 	}
+}
+
+func (d *DPT_1017) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1017(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1017) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1017) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1018 represents DPT 1.018 (G) / DPT_Occupancy.
@@ -417,6 +795,28 @@ func (d DPT_1018) String() string {
 	}
 }
 
+func (d *DPT_1018) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1018(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1018) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1018) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1019 represents DPT 1.019 (G) / DPT_Window_Door.
 type DPT_1019 bool
 
@@ -438,6 +838,28 @@ func (d DPT_1019) String() string {
 	} else {
 		return "closed"
 	}
+}
+
+func (d *DPT_1019) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1019(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1019) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1019) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1021 represents DPT 1.021 (FB) / DPT_LogicalFunction.
@@ -463,6 +885,28 @@ func (d DPT_1021) String() string {
 	}
 }
 
+func (d *DPT_1021) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1021(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1021) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1021) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1022 represents DPT 1.022 (FB) / DPT_Scene_AB.
 type DPT_1022 bool
 
@@ -484,6 +928,28 @@ func (d DPT_1022) String() string {
 	} else {
 		return "scene A"
 	}
+}
+
+func (d *DPT_1022) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1022(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1022) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1022) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }
 
 // DPT_1023 represents DPT 1.023 (FB) / DPT_ShutterBlinds_Mode.
@@ -509,6 +975,28 @@ func (d DPT_1023) String() string {
 	}
 }
 
+func (d *DPT_1023) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1023(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1023) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1023) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1024 represents DPT 1.024 (G) / DPT_DayNight.
 type DPT_1024 bool
 
@@ -532,6 +1020,28 @@ func (d DPT_1024) String() string {
 	}
 }
 
+func (d *DPT_1024) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1024(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1024) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1024) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
+}
+
 // DPT_1100 represents DPT 1.100 (FB) / DPT_Heat/Cool.
 type DPT_1100 bool
 
@@ -553,4 +1063,26 @@ func (d DPT_1100) String() string {
 	} else {
 		return "cooling"
 	}
+}
+
+func (d *DPT_1100) Set(v interface{}) error {
+	if data, ok := v.(bool); ok {
+		*d = DPT_1100(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_1100) Get() interface{} {
+	return bool(d)
+}
+
+func (d DPT_1100) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, bool(d))
+	}
+	if d {
+		return "1"
+	}
+	return "0"
 }

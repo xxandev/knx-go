@@ -3,6 +3,8 @@
 
 package dpt
 
+import "fmt"
+
 // DPT_28001 represents DPT 28.001 / Var String UTF-8.
 type DPT_28001 string
 
@@ -30,4 +32,23 @@ func (d DPT_28001) Unit() string {
 
 func (d DPT_28001) String() string {
 	return string(d)
+}
+
+func (d *DPT_28001) Set(v interface{}) error {
+	if data, ok := v.(string); ok {
+		*d = DPT_28001(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_28001) Get() interface{} {
+	return string(d)
+}
+
+func (d DPT_28001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, string(d))
+	}
+	return fmt.Sprint(string(d))
 }

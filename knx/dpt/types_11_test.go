@@ -19,7 +19,7 @@ func TestDPT_11001(t *testing.T) {
 	buf := src.Pack()
 	_ = dst.Unpack(buf)
 
-	if src.IsValid() {
+	if src.Valid() == nil {
 		t.Errorf("Date 2001-02-29 should not be a valid date")
 		t.Errorf("%s -> %s should be 2001-02-29\n", src.String(), dst.String())
 	}
@@ -34,7 +34,7 @@ func TestDPT_11001(t *testing.T) {
 			src.Month = uint8(m)
 			for d := 1; d <= 31; d++ {
 				src.Day = uint8(d)
-				if src.IsValid() {
+				if src.Valid() == nil {
 					buf := src.Pack()
 					dst.Unpack(buf)
 					tm, _ := time.Parse("2006-01-02", dst.String())

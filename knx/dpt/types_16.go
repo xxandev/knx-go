@@ -4,6 +4,7 @@
 package dpt
 
 import (
+	"fmt"
 	"unicode"
 )
 
@@ -63,6 +64,25 @@ func (d DPT_16000) String() string {
 	return string(d)
 }
 
+func (d *DPT_16000) Set(v interface{}) error {
+	if data, ok := v.(string); ok {
+		*d = DPT_16000(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_16000) Get() interface{} {
+	return string(d)
+}
+
+func (d DPT_16000) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, string(d))
+	}
+	return fmt.Sprint(string(d))
+}
+
 // DPT_16001 represents DPT 16.001 / String 8859-1.
 // The string must be ISO-8859-1 and contain at most 14 chars.
 // A string longer than 14 chars will be silently truncated.
@@ -117,4 +137,23 @@ func (d DPT_16001) IsValid() bool {
 
 func (d DPT_16001) String() string {
 	return string(d)
+}
+
+func (d *DPT_16001) Set(v interface{}) error {
+	if data, ok := v.(string); ok {
+		*d = DPT_16001(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_16001) Get() interface{} {
+	return string(d)
+}
+
+func (d DPT_16001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, string(d))
+	}
+	return fmt.Sprint(string(d))
 }

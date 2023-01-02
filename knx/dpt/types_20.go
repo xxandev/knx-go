@@ -1,5 +1,7 @@
 package dpt
 
+import "fmt"
+
 const (
 	HVACMode_Auto DPT_20102 = iota
 	HVACMode_Comfort
@@ -38,6 +40,29 @@ func (d DPT_20102) String() string {
 	default:
 		return "reserved"
 	}
+}
+
+func (d *DPT_20102) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint8:
+		*d = DPT_20102(data)
+		return nil
+	case int:
+		*d = DPT_20102(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_20102) Get() interface{} {
+	return uint8(d)
+}
+
+func (d DPT_20102) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint8(d))
+	}
+	return fmt.Sprint(uint8(d))
 }
 
 // DPT_20105 represents DPT 20.105 / HVACContrMode.
@@ -104,4 +129,27 @@ func (d DPT_20105) String() string {
 		return "NoDem"
 	}
 	return "reserved"
+}
+
+func (d *DPT_20105) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint8:
+		*d = DPT_20105(data)
+		return nil
+	case int:
+		*d = DPT_20105(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_20105) Get() interface{} {
+	return uint8(d)
+}
+
+func (d DPT_20105) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint8(d))
+	}
+	return fmt.Sprint(uint8(d))
 }

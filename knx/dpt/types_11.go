@@ -19,7 +19,7 @@ type DPT_11001 struct {
 func (d DPT_11001) Pack() []byte {
 	var buf = []byte{0, 0, 0, 0}
 
-	if d.Year >= 1990 && d.Year <= 2089 && d.IsValid() {
+	if d.Year >= 1990 && d.Year <= 2089 && d.Valid() == nil {
 		buf[1] = d.Day & 0x1F
 		buf[2] = d.Month & 0xF
 
@@ -59,27 +59,48 @@ func (d *DPT_11001) Unpack(data []byte) error {
 	} else {
 		d.Year += 2000
 	}
-
-	if !d.IsValid() {
-		return fmt.Errorf("payload is out of range")
-	}
-
-	return nil
+	return d.Valid()
 }
 
 func (d DPT_11001) Unit() string {
 	return ""
 }
 
-func (d DPT_11001) IsValid() bool {
+func (d DPT_11001) Valid() error {
 	tm := time.Date(int(d.Year), time.Month(d.Month), int(d.Day), 0, 0, 0, 0, time.UTC)
 	if tm.Year() < 1990 || tm.Year() > 2089 {
-		return false
-	} else {
-		return (int(d.Year) == tm.Year() && d.Month == uint8(tm.Month()) && int(d.Day) == tm.Day())
+		return fmt.Errorf("payload is out of range")
 	}
+	if !(int(d.Year) == tm.Year() && d.Month == uint8(tm.Month()) && int(d.Day) == tm.Day()) {
+		return fmt.Errorf("payload is out of range")
+	}
+	return nil
 }
 
 func (d DPT_11001) String() string {
+	return fmt.Sprintf("%04d-%02d-%02d", d.Year, d.Month, d.Day)
+}
+
+func (d *DPT_11001) Set(v interface{}) error {
+	if data, ok := v.([]uint16); ok {
+		if len(data) != 4 {
+			return ErrInvalidLength
+		}
+		d.Year = data[0]
+		d.Month = uint8(data[1])
+		d.Day = uint8(data[2])
+		return d.Valid()
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_11001) Get() interface{} {
+	return []uint16{d.Year, uint16(d.Day), uint16(d.Month)}
+}
+
+func (d DPT_11001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, d.Year, d.Month, d.Day)
+	}
 	return fmt.Sprintf("%04d-%02d-%02d", d.Year, d.Month, d.Day)
 }

@@ -26,6 +26,29 @@ func (d DPT_13001) String() string {
 	return fmt.Sprintf("%d pulses", int32(d))
 }
 
+func (d *DPT_13001) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13001(data)
+		return nil
+	case int:
+		*d = DPT_13001(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13001) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
+}
+
 // DPT_13002 represents DPT 13.002 / flow rate (m^3/h).
 type DPT_13002 int32
 
@@ -43,6 +66,29 @@ func (d DPT_13002) Unit() string {
 
 func (d DPT_13002) String() string {
 	return fmt.Sprintf("%d m^3/h", int32(d))
+}
+
+func (d *DPT_13002) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13002(data)
+		return nil
+	case int:
+		*d = DPT_13002(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13002) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13002) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
 }
 
 // DPT_13010 represents DPT 13.010 / active energy (Wh).
@@ -64,6 +110,29 @@ func (d DPT_13010) String() string {
 	return fmt.Sprintf("%d Wh", int32(d))
 }
 
+func (d *DPT_13010) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13010(data)
+		return nil
+	case int:
+		*d = DPT_13010(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13010) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13010) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
+}
+
 // DPT_13011 represents DPT 13.011 / apparant energy (VAh).
 type DPT_13011 int32
 
@@ -81,6 +150,29 @@ func (d DPT_13011) Unit() string {
 
 func (d DPT_13011) String() string {
 	return fmt.Sprintf("%d VAh", int32(d))
+}
+
+func (d *DPT_13011) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13011(data)
+		return nil
+	case int:
+		*d = DPT_13011(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13011) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13011) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
 }
 
 // DPT_13012 represents DPT 13.012 / reactive energy (VARh).
@@ -102,6 +194,29 @@ func (d DPT_13012) String() string {
 	return fmt.Sprintf("%d VARh", int32(d))
 }
 
+func (d *DPT_13012) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13012(data)
+		return nil
+	case int:
+		*d = DPT_13012(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13012) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13012) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
+}
+
 // DPT_13013 represents DPT 13.013 / active energy (kWh).
 type DPT_13013 int32
 
@@ -119,6 +234,29 @@ func (d DPT_13013) Unit() string {
 
 func (d DPT_13013) String() string {
 	return fmt.Sprintf("%d kWh", int32(d))
+}
+
+func (d *DPT_13013) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13013(data)
+		return nil
+	case int:
+		*d = DPT_13013(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13013) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13013) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
 }
 
 // DPT_13014 represents DPT 13.014 / apparant energy (kVAh).
@@ -140,6 +278,29 @@ func (d DPT_13014) String() string {
 	return fmt.Sprintf("%d kVAh", int32(d))
 }
 
+func (d *DPT_13014) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13014(data)
+		return nil
+	case int:
+		*d = DPT_13014(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13014) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13014) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
+}
+
 // DPT_13015 represents DPT 13.015 / reactive energy (kVARh).
 type DPT_13015 int32
 
@@ -157,6 +318,29 @@ func (d DPT_13015) Unit() string {
 
 func (d DPT_13015) String() string {
 	return fmt.Sprintf("%d kVARh", int32(d))
+}
+
+func (d *DPT_13015) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13015(data)
+		return nil
+	case int:
+		*d = DPT_13015(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13015) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13015) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
 }
 
 // DPT_13016 represents DPT 13.016 / apparant energy (MWh).
@@ -178,6 +362,29 @@ func (d DPT_13016) String() string {
 	return fmt.Sprintf("%d MWh", int32(d))
 }
 
+func (d *DPT_13016) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13016(data)
+		return nil
+	case int:
+		*d = DPT_13016(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13016) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13016) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
+}
+
 // DPT_13100 represents DPT 13.100 / delta time (s).
 type DPT_13100 int32
 
@@ -195,4 +402,27 @@ func (d DPT_13100) Unit() string {
 
 func (d DPT_13100) String() string {
 	return fmt.Sprintf("%d s", int32(d))
+}
+
+func (d *DPT_13100) Set(v interface{}) error {
+	switch data := v.(type) {
+	case int32:
+		*d = DPT_13100(data)
+		return nil
+	case int:
+		*d = DPT_13100(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_13100) Get() interface{} {
+	return int32(d)
+}
+
+func (d DPT_13100) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, int32(d))
+	}
+	return fmt.Sprintf("%d", int32(d))
 }

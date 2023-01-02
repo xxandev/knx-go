@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vapourismo/knx-go/knx/cemi"
-	"github.com/vapourismo/knx-go/knx/knxnet"
+	"github.com/xxandev/knx-go/knx/cemi"
+	"github.com/xxandev/knx-go/knx/knxnet"
 )
 
 func makeTunnelConn(

@@ -10,6 +10,18 @@ type DatapointValue interface {
 
 	// Unpack a the datapoint value from a byte array.
 	Unpack(data []byte) error
+
+	// Set - set DPT_xxx value
+	Set(v interface{}) error
+
+	// Get - get DPT_xxx value
+	Get() interface{}
+
+	// Formatting - return value to a string of the given format
+	//  Formatting("") return default format value
+	//  Formatting("%v") return format value
+	//  ...
+	Formatting(format string) string
 }
 
 // DatapointMeta gives meta information about a datapoint type.

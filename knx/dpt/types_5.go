@@ -1,6 +1,8 @@
 package dpt
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // DPT_5001 represents DPT 5.001 / Scaling.
 type DPT_5001 float32
@@ -32,6 +34,32 @@ func (d DPT_5001) Unit() string {
 
 func (d DPT_5001) String() string {
 	return fmt.Sprintf("%.2f%%", float32(d))
+}
+
+func (d *DPT_5001) Set(v interface{}) error {
+	switch data := v.(type) {
+	case float32:
+		*d = DPT_5001(data)
+		return nil
+	case float64:
+		*d = DPT_5001(data)
+		return nil
+	case int:
+		*d = DPT_5001(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_5001) Get() interface{} {
+	return float32(d)
+}
+
+func (d DPT_5001) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, float32(d))
+	}
+	return fmt.Sprintf("%.2f", float32(d))
 }
 
 // DPT_5003 represents DPT 5.003 / Angle.
@@ -66,6 +94,32 @@ func (d DPT_5003) String() string {
 	return fmt.Sprintf("%.2f°", float32(d))
 }
 
+func (d *DPT_5003) Set(v interface{}) error {
+	switch data := v.(type) {
+	case float32:
+		*d = DPT_5003(data)
+		return nil
+	case float64:
+		*d = DPT_5003(data)
+		return nil
+	case int:
+		*d = DPT_5003(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_5003) Get() interface{} {
+	return float32(d)
+}
+
+func (d DPT_5003) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, float32(d))
+	}
+	return fmt.Sprintf("%.2f", float32(d))
+}
+
 // DPT_5004 represents DPT 5.004 / Percent_U8.
 type DPT_5004 uint8
 
@@ -85,6 +139,29 @@ func (d DPT_5004) String() string {
 	return fmt.Sprintf("%.2f%%", float32(d))
 }
 
+func (d *DPT_5004) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint8:
+		*d = DPT_5004(data)
+		return nil
+	case int:
+		*d = DPT_5004(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_5004) Get() interface{} {
+	return uint8(d)
+}
+
+func (d DPT_5004) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint8(d))
+	}
+	return fmt.Sprintf("%d", uint8(d))
+}
+
 // DPT_5005 represents DPT 5.005 / Ratio (0..255).
 type DPT_5005 uint8
 
@@ -101,5 +178,28 @@ func (d DPT_5005) Unit() string {
 }
 
 func (d DPT_5005) String() string {
+	return fmt.Sprintf("%d", uint8(d))
+}
+
+func (d *DPT_5005) Set(v interface{}) error {
+	switch data := v.(type) {
+	case uint8:
+		*d = DPT_5005(data)
+		return nil
+	case int:
+		*d = DPT_5005(data)
+		return nil
+	}
+	return fmt.Errorf("invalid value for %[1]T, %[2]T=%[2]v ", *d, v)
+}
+
+func (d DPT_5005) Get() interface{} {
+	return uint8(d)
+}
+
+func (d DPT_5005) Formatting(format string) string {
+	if format != "" {
+		return fmt.Sprintf(format, uint8(d))
+	}
 	return fmt.Sprintf("%d", uint8(d))
 }
